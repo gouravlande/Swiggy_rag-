@@ -39,3 +39,38 @@ pip install langchain langchain-community sentence-transformers faiss-cpu transf
 python rag_swiggy.py
 
 3. Ask questions in the CLI
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#
+Short Architecture Diagram 
+#
+
+Swiggy PDF
+   ↓
+Document Loader
+   ↓
+Text Chunking
+   ↓
+Embeddings (MiniLM)
+   ↓
+FAISS Vector Database
+   ↓
+Retriever
+   ↓
+LLM
+   ↓
+Answer
+
+This shows RAG architecture clearly
+
+
+#
+workflow
+#
+Load PDF
+Chunk text
+Create embeddings
+Store in FAISS
+Retrieve relevant chunks
+Generate answer
+CLI question input
