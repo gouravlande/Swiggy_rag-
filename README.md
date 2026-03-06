@@ -3,9 +3,7 @@
 ## Objective
 Build a Retrieval-Augmented Generation (RAG) system that answers questions based strictly on the Swiggy Annual Report.
 
-## Dataset
-Swiggy Annual Report 2023–24  
-Source: https://www.swiggy.com/investors
+#
 
 ## Technologies Used
 - Python
