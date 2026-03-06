@@ -1,50 +1,37 @@
 # RAG Question Answering System – Swiggy Annual Report
 
 ## Objective
-Build a Retrieval-Augmented Generation (RAG) system that answers questions based strictly on the Swiggy Annual Report.
 
-#
+Build a Retrieval-Augmented Generation (RAG) system that answers user questions strictly based on the Swiggy Annual Report.
+
+---
 
 ## Technologies Used
-- Python
-- LangChain
-- FAISS Vector Database
-- Sentence Transformers (all-MiniLM-L6-v2)
-- HuggingFace Transformers
-- TinyLlama LLM
+
+* Python
+* LangChain
+* FAISS Vector Database
+* Sentence Transformers (all-MiniLM-L6-v2)
+* HuggingFace Transformers
+* TinyLlama LLM
+
+---
 
 ## System Architecture
-1. Load Swiggy Annual Report PDF
-2. Split document into text chunks
-3. Generate embeddings using sentence-transformers
-4. Store embeddings in FAISS vector database
-5. Retrieve relevant document chunks
-6. Pass context to LLM
-7. Generate final answer
 
-## Example Query
-Question:
-What is Swiggy?
+1. Load the Swiggy Annual Report PDF
+2. Split the document into smaller text chunks
+3. Generate embeddings using Sentence Transformers
+4. Store embeddings in a FAISS vector database
+5. Retrieve the most relevant chunks for a question
+6. Pass the retrieved context to the LLM
+7. Generate the final answer based on the retrieved context
 
-Answer:
-Swiggy is a hyperlocal commerce platform that provides food delivery and convenience services across multiple cities in India.
+---
 
-## How to Run
-1. Install dependencies
+## Architecture Diagram
 
-pip install langchain langchain-community sentence-transformers faiss-cpu transformers pypdf
-
-2. Run the script
-
-python rag_swiggy.py
-
-3. Ask questions in the CLI
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#
-Short Architecture Diagram 
-#
-
+```
 Swiggy PDF
    ↓
 Document Loader
@@ -60,17 +47,69 @@ Retriever
 LLM
    ↓
 Answer
+```
 
-This shows RAG architecture clearly
+---
 
+## Workflow
 
-#
-workflow
-#
+```
 Load PDF
-Chunk text
-Create embeddings
+   ↓
+Chunk Text
+   ↓
+Create Embeddings
+   ↓
 Store in FAISS
-Retrieve relevant chunks
-Generate answer
-CLI question input
+   ↓
+Retrieve Relevant Chunks
+   ↓
+Generate Answer
+   ↓
+CLI Question Input
+```
+
+---
+
+## Example Query
+
+Question:
+What is Swiggy?
+
+Answer:
+Swiggy is a hyperlocal commerce platform that provides food delivery and convenience services across multiple cities in India.
+
+---
+
+## How to Run
+
+### 1. Install Dependencies
+
+```
+pip install langchain langchain-community sentence-transformers faiss-cpu transformers pypdf
+```
+
+### 2. Run the Script
+
+```
+python rag_swiggy.py
+```
+
+### 3. Ask Questions
+
+```
+Ask a question about Swiggy report: What is Instamart?
+```
+
+---
+
+## Project Structure
+
+```
+RAG-Swiggy-Report
+│
+├── rag_swiggy.py
+├── README.md
+├── requirements.txt
+└── swiggy_report.pdf
+```
