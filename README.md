@@ -110,6 +110,5 @@ RAG-Swiggy-Report
 │
 ├── rag_swiggy.py
 ├── README.md
-├── requirements.txt
 └── swiggy_report.pdf
 ```
